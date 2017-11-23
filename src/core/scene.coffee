@@ -7,6 +7,7 @@ module.exports = (props) ->
   timeDisplays = (require '../objects/time-displays.coffee') props
 
   scene = new THREE.Scene()
+  scene.scale.set props.scale, props.scale, props.scale
 
   for unit in ['minute', 'hour', 'day']
     counter = new THREE.Group()
