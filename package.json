@@ -1,6 +1,6 @@
 {
   "name": "timeglass-3d",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A fancy 3D timer for your website.",
 
   "main": "lib/timeglass-3d.js",
