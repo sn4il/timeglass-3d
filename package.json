@@ -1,0 +1,32 @@
+{
+  "name": "timeglass-3d",
+  "version": "0.0.0",
+  "description": "A fancy 3D timer for your website.",
+
+  "main": "lib/timeglass-3d.js",
+
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "watch": "webpack --config webpack.dev.js --watch"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sn4il/timeglass-3d.git"
+  },
+
+  "author": "Andrey Malyarchuk <me@sn4il.com> (https://sn4il.com/)",
+  "license": "MIT",
+
+  "dependencies": {
+    "three": "^0.87.1"
+  },
+
+  "devDependencies": {
+    "webpack": "^3.6.0",
+
+    "coffee-script": "~1.9.3",
+    "coffee-loader": "~0.7.3"
+  }
+}
+
