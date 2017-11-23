@@ -55,7 +55,7 @@ module.exports = do ->
 
     renderer.render scene, camera
 
-  return (_props = {}, noWarnings = false, noInfo = false) ->
+  return (_props = {}, noInfo = false, noWarnings = false) ->
     return unless props = (require './props.coffee') _props
 
     log "v#{VERSION}" unless noInfo
