@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Timeglass 3D</title>
+
+    <!-- Embeded CSS -->
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
+
+    <!-- Timeglass 3D -->
+    <script src="https://cdn.jsdelivr.net/npm/timeglass-3d/lib/timeglass-3d.min.js"></script>
+
+    <!-- Embeded JS -->
+    <script>
+      /*
+       * Parsing URL parameters.
+       */
+      const props = window.location.href.replace(/.*\?/, '').split('&').reduce((props, prop) => {
+        const aux = {};
+        aux[`${prop.split('=')[0]}`] = prop.split('=')[1];
+
+        return Object.assign({}, props, aux);
+      }, {});
+
+      props.date = props.date || Date.now();
+      props.mode = props.mode || 'timer';
+
+      props.theme = props.theme || 'lite';
+
+      props.onTableMode    = props.onTableMode    === 'true';
+      props.lookAroundMode = props.lookAroundMode === 'true';
+
+      timeglass3D(Object.assign({}, props, {
+        hourglasses: {
+          all: {
+            sides: {
+              material: 'matte'
+            }
+          }
+        },
+
+        scale: 0.9,
+        spacing: 3,
+        offsetX: 0,
+        offsetY: 2
+      }));
+    </script>
+  </body>
+</html>
+
