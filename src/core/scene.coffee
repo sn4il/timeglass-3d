@@ -10,17 +10,17 @@ module.exports = (props) ->
   scene.scale.set props.scale, props.scale, props.scale
 
   for unit in ['minute', 'hour', 'day']
-    counter = new THREE.Group()
-    counter.name = "composite-#{unit}"
+    composite = new THREE.Group()
+    composite.name = "composite-#{unit}"
 
-    counter.position.x = switch unit
+    composite.position.x = switch unit
       when 'minute' then 0 + 8.2 + props.spacing
       when 'hour'   then 0
       when 'day'    then 0 - 8.2 - props.spacing
 
-    counter.add lighting, hourglasses[unit], timeDisplays[unit]
+    composite.add lighting, hourglasses[unit], timeDisplays[unit]
 
-    scene.add counter
+    scene.add composite
 
   return scene
 
