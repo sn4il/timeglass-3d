@@ -1911,7 +1911,7 @@ function loadLocale(name) {
         try {
             oldLocale = globalLocale._abbr;
             var aliasedRequire = require;
-            __webpack_require__(396)("./" + name);
+            __webpack_require__(397)("./" + name);
             getSetGlobalLocale(oldLocale);
         } catch (e) {}
     }
@@ -4583,7 +4583,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(395)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(396)(module)))
 
 /***/ }),
 /* 1 */
@@ -44311,6 +44311,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
@@ -44339,52 +44343,110 @@ var _Image = __webpack_require__(388);
 
 var _Image2 = _interopRequireDefault(_Image);
 
-var _MyForm = __webpack_require__(390);
+var _Form = __webpack_require__(390);
 
-var _MyForm2 = _interopRequireDefault(_MyForm);
+var _Form2 = _interopRequireDefault(_Form);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function () {
-  return _react2.default.createElement(
-    _App2.default,
-    { centered: false },
-    _react2.default.createElement(
-      _Split2.default,
-      { flex: 'left' },
-      _react2.default.createElement(
-        _Box2.default,
-        { full: true },
-        _react2.default.createElement('iframe', { id: 'iframe', src: './timeglass-3d.html', frameBorder: 0, style: { height: '100%' } })
-      ),
-      _react2.default.createElement(
-        _Sidebar2.default,
-        { pad: 'small' },
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _class = function (_React$Component) {
+  _inherits(_class, _React$Component);
+
+  function _class(props) {
+    _classCallCheck(this, _class);
+
+    var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
+
+    _this.state = {
+      options: {
+        mode: 'timer',
+        theme: 'lite',
+        onTableMode: false,
+        lookAroundMode: false
+      }
+    };
+    return _this;
+  }
+
+  _createClass(_class, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        _App2.default,
+        { centered: false },
         _react2.default.createElement(
-          _Header2.default,
-          { justify: 'center' },
+          _Split2.default,
+          { flex: 'left' },
           _react2.default.createElement(
-            'a',
-            { href: 'https://github.com/sn4il/timeglass-3d', target: '_blank' },
-            _react2.default.createElement(_Image2.default, { size: 'small', src: 'https://user-images.githubusercontent.com/9012519/33229008-e7527260-d1ce-11e7-88da-667cbb1cd76b.png' })
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          { style: { margin: '1em' } },
-          'A fancy 3D timer for your website. See project\'s ',
-          _react2.default.createElement(
-            'a',
-            { href: 'https://github.com/sn4il/timeglass-3d', target: '_blank' },
-            'GitHub'
+            _Box2.default,
+            { full: true },
+            _react2.default.createElement('iframe', { id: 'iframe', src: './timeglass-3d.html', frameBorder: 0, style: { height: '100%' } })
           ),
-          ' page for docs.'
-        ),
-        _react2.default.createElement(_MyForm2.default, null)
-      )
-    )
-  );
-};
+          _react2.default.createElement(
+            _Sidebar2.default,
+            { pad: 'small' },
+            _react2.default.createElement(
+              _Header2.default,
+              { justify: 'center' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://github.com/sn4il/timeglass-3d', target: '_blank' },
+                _react2.default.createElement(_Image2.default, { size: 'small', src: 'https://user-images.githubusercontent.com/9012519/33229008-e7527260-d1ce-11e7-88da-667cbb1cd76b.png' })
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              { style: { margin: '1em' } },
+              'A fancy 3D timer for your website. See project\'s ',
+              _react2.default.createElement(
+                'a',
+                { href: 'https://github.com/sn4il/timeglass-3d', target: '_blank' },
+                'GitHub'
+              ),
+              ' page for docs.'
+            ),
+            _react2.default.createElement(_Form2.default, _extends({}, this.state.options, { onChange: function onChange(options) {
+                return _this2.setState({
+                  options: Object.assign({}, _this2.state.options, options)
+                }, _this2.updateIFrame);
+              } }))
+          )
+        )
+      );
+    }
+  }, {
+    key: 'updateIFrame',
+    value: function updateIFrame() {
+      var _this3 = this;
+
+      var iframe = document.querySelector('#iframe');
+
+      var params = Object.keys(this.state.options).map(function (key) {
+        return key + '=' + _this3.state.options[key];
+      }).join('&');
+      var url = './timeglass-3d.html?' + params;
+
+      iframe.style.backgroundImage = {
+        lite: 'linear-gradient(#eeeeee, #ffffff)',
+        dark: 'linear-gradient(#555555, #666666)'
+      }[this.state.options.theme];
+
+      iframe.src = url;
+    }
+  }]);
+
+  return _class;
+}(_react2.default.Component);
+
+exports.default = _class;
 
 /***/ }),
 /* 347 */
@@ -55971,8 +56033,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
@@ -55989,181 +56049,101 @@ var _FormField = __webpack_require__(393);
 
 var _FormField2 = _interopRequireDefault(_FormField);
 
-var _DateTime = __webpack_require__(394);
-
-var _DateTime2 = _interopRequireDefault(_DateTime);
-
-var _RadioButton = __webpack_require__(405);
-
-var _RadioButton2 = _interopRequireDefault(_RadioButton);
-
-var _CheckBox = __webpack_require__(406);
+var _CheckBox = __webpack_require__(394);
 
 var _CheckBox2 = _interopRequireDefault(_CheckBox);
 
+var _DateTime = __webpack_require__(395);
+
+var _DateTime2 = _interopRequireDefault(_DateTime);
+
+var _RadioButton = __webpack_require__(406);
+
+var _RadioButton2 = _interopRequireDefault(_RadioButton);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _class = function (_React$Component) {
-  _inherits(_class, _React$Component);
-
-  function _class(props) {
-    _classCallCheck(this, _class);
-
-    var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
-
-    _this.state = {
-      mode: 'timer',
-
-      theme: 'lite',
-
-      onTableMode: false,
-      lookAroundMode: false
-    };
-    return _this;
-  }
-
-  _createClass(_class, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        _Form2.default,
+exports.default = function (props) {
+  return _react2.default.createElement(
+    _Form2.default,
+    null,
+    _react2.default.createElement(
+      _FormFields2.default,
+      { style: { marginBottom: '0.5em' } },
+      _react2.default.createElement(
+        _FormField2.default,
+        { label: 'Date' },
+        _react2.default.createElement(_DateTime2.default, { format: 'MM/DD/YYYY', value: props.date, onChange: function onChange(date) {
+            return props.onChange({ date: date });
+          } })
+      ),
+      _react2.default.createElement(
+        _FormField2.default,
+        { label: 'Mode' },
+        _react2.default.createElement(_RadioButton2.default, {
+          id: 'timer',
+          label: 'Timer',
+          checked: props.mode === 'timer',
+          onChange: function onChange() {
+            return props.onChange({ mode: 'timer' });
+          } }),
+        _react2.default.createElement(_RadioButton2.default, {
+          id: 'countdown',
+          label: 'Countdown',
+          checked: props.mode === 'countdown',
+          onChange: function onChange() {
+            return props.onChange({ mode: 'countdown' });
+          } })
+      )
+    ),
+    _react2.default.createElement(
+      _FormFields2.default,
+      { style: { marginBottom: '0.5em' } },
+      _react2.default.createElement(
+        _FormField2.default,
+        { label: 'Theme' },
+        _react2.default.createElement(_RadioButton2.default, {
+          id: 'lite',
+          label: 'Light',
+          checked: props.theme === 'lite',
+          onChange: function onChange() {
+            return props.onChange({ theme: 'lite' });
+          } }),
+        _react2.default.createElement(_RadioButton2.default, {
+          id: 'dark',
+          label: 'Dark',
+          checked: props.theme === 'dark',
+          onChange: function onChange() {
+            return props.onChange({ theme: 'dark' });
+          } })
+      )
+    ),
+    _react2.default.createElement(
+      _FormFields2.default,
+      { style: { marginBottom: '0.5em' } },
+      _react2.default.createElement(
+        _FormField2.default,
         null,
-        _react2.default.createElement(
-          _FormFields2.default,
-          { style: { marginBottom: '0.5em' } },
-          _react2.default.createElement(
-            _FormField2.default,
-            { label: 'Date' },
-            _react2.default.createElement(_DateTime2.default, {
-              format: 'MM/DD/YYYY',
-              value: this.state.date,
-
-              onChange: function onChange(date) {
-                if (date.match(/^\d\d\/\d\d\/\d\d\d\d$/)) {
-                  _this2.setState({
-                    date: date
-                  }, _this2.renderIFrame);
-                }
-              } })
-          ),
-          _react2.default.createElement(
-            _FormField2.default,
-            { label: 'Mode' },
-            _react2.default.createElement(_RadioButton2.default, {
-              id: 'timer',
-              label: 'Timer',
-              checked: this.state.mode === 'timer',
-
-              onChange: function onChange() {
-                return _this2.setState({
-                  mode: 'timer'
-                }, _this2.renderIFrame);
-              } }),
-            _react2.default.createElement(_RadioButton2.default, {
-              id: 'countdown',
-              label: 'Countdown',
-              checked: this.state.mode === 'countdown',
-
-              onChange: function onChange() {
-                return _this2.setState({
-                  mode: 'countdown'
-                }, _this2.renderIFrame);
-              } })
-          )
-        ),
-        _react2.default.createElement(
-          _FormFields2.default,
-          { style: { marginBottom: '0.5em' } },
-          _react2.default.createElement(
-            _FormField2.default,
-            { label: 'Theme' },
-            _react2.default.createElement(_RadioButton2.default, {
-              id: 'lite',
-              label: 'Light',
-              checked: this.state.theme === 'lite',
-
-              onChange: function onChange() {
-                return _this2.setState({
-                  theme: 'lite'
-                }, _this2.renderIFrame);
-              } }),
-            _react2.default.createElement(_RadioButton2.default, {
-              id: 'dark',
-              label: 'Dark',
-              checked: this.state.theme === 'dark',
-
-              onChange: function onChange() {
-                return _this2.setState({
-                  theme: 'dark'
-                }, _this2.renderIFrame);
-              } })
-          )
-        ),
-        _react2.default.createElement(
-          _FormFields2.default,
-          { style: { marginBottom: '0.5em' } },
-          _react2.default.createElement(
-            _FormField2.default,
-            null,
-            _react2.default.createElement(_CheckBox2.default, {
-              label: '"On Table" mode',
-              checked: this.state.onTableMode,
-
-              onChange: function onChange() {
-                return _this2.setState({
-                  onTableMode: !_this2.state.onTableMode
-                }, _this2.renderIFrame);
-              } })
-          ),
-          _react2.default.createElement(
-            _FormField2.default,
-            null,
-            _react2.default.createElement(_CheckBox2.default, {
-              label: '"Look Around" mode',
-              checked: this.state.lookAroundMode,
-
-              onChange: function onChange() {
-                return _this2.setState({
-                  lookAroundMode: !_this2.state.lookAroundMode
-                }, _this2.renderIFrame);
-              } })
-          )
-        )
-      );
-    }
-  }, {
-    key: 'renderIFrame',
-    value: function renderIFrame() {
-      var _this3 = this;
-
-      var props = Object.keys(this.state).map(function (key) {
-        return key + '=' + _this3.state[key];
-      }).join('&');
-      var url = './timeglass-3d.html?' + props;
-
-      var iframeNode = document.querySelector('#iframe');
-
-      iframeNode.style.backgroundImage = {
-        lite: 'linear-gradient(#eeeeee, #ffffff)',
-        dark: 'linear-gradient(#555555, #666666)'
-      }[this.state.theme];
-
-      iframeNode.src = url;
-    }
-  }]);
-
-  return _class;
-}(_react2.default.Component);
-
-exports.default = _class;
+        _react2.default.createElement(_CheckBox2.default, {
+          label: '"On Table" mode',
+          checked: props.onTableMode,
+          onChange: function onChange() {
+            return props.onChange({ onTableMode: !props.onTableMode });
+          } })
+      ),
+      _react2.default.createElement(
+        _FormField2.default,
+        null,
+        _react2.default.createElement(_CheckBox2.default, {
+          label: '"Look Around" mode',
+          checked: props.lookAroundMode,
+          onChange: function onChange() {
+            return props.onChange({ lookAroundMode: !props.lookAroundMode });
+          } })
+      )
+    )
+  );
+};
 
 /***/ }),
 /* 391 */
@@ -56535,6 +56515,135 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(5);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames2 = __webpack_require__(8);
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
+var _CSSClassnames = __webpack_require__(6);
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX;
+
+var CheckBox = function (_Component) {
+  _inherits(CheckBox, _Component);
+
+  function CheckBox() {
+    _classCallCheck(this, CheckBox);
+
+    return _possibleConstructorReturn(this, (CheckBox.__proto__ || Object.getPrototypeOf(CheckBox)).apply(this, arguments));
+  }
+
+  _createClass(CheckBox, [{
+    key: 'render',
+    value: function render() {
+      var _classnames;
+
+      var _props = this.props,
+          checked = _props.checked,
+          className = _props.className,
+          disabled = _props.disabled,
+          label = _props.label,
+          name = _props.name,
+          onChange = _props.onChange,
+          reverse = _props.reverse,
+          toggle = _props.toggle,
+          props = _objectWithoutProperties(_props, ['checked', 'className', 'disabled', 'label', 'name', 'onChange', 'reverse', 'toggle']);
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--toggle', toggle), _defineProperty(_classnames, CLASS_ROOT + '--disabled', disabled), _defineProperty(_classnames, CLASS_ROOT + '--reverse', reverse), _classnames), className);
+
+      var hidden = void 0;
+      if (disabled && checked) {
+        hidden = _react2.default.createElement('input', { name: name, type: 'hidden', value: 'true' });
+      }
+
+      var children = [_react2.default.createElement(
+        'span',
+        { key: 'checkbox' },
+        _react2.default.createElement('input', _extends({}, props, { tabIndex: '0', className: CLASS_ROOT + '__input',
+          name: name, type: 'checkbox',
+          disabled: disabled,
+          checked: checked,
+          onChange: onChange })),
+        _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__control' },
+          _react2.default.createElement(
+            'svg',
+            { className: CLASS_ROOT + '__control-check', viewBox: '0 0 24 24',
+              preserveAspectRatio: 'xMidYMid meet' },
+            _react2.default.createElement('path', { fill: 'none', d: 'M6,11.3 L10.3,16 L18,6.2' })
+          )
+        )
+      ), _react2.default.createElement(
+        'span',
+        { key: 'label', className: CLASS_ROOT + '__label' },
+        label
+      )];
+
+      return _react2.default.createElement(
+        'label',
+        { className: classes, htmlFor: props.id },
+        reverse ? children.reverse() : children,
+        hidden
+      );
+    }
+  }]);
+
+  return CheckBox;
+}(_react.Component);
+
+CheckBox.displayName = 'CheckBox';
+exports.default = CheckBox;
+
+
+CheckBox.propTypes = {
+  checked: _propTypes2.default.bool,
+  disabled: _propTypes2.default.bool,
+  id: _propTypes2.default.string,
+  label: _propTypes2.default.node,
+  name: _propTypes2.default.string,
+  onChange: _propTypes2.default.func,
+  reverse: _propTypes2.default.bool,
+  toggle: _propTypes2.default.bool
+};
+module.exports = exports['default'];
+
+/***/ }),
+/* 395 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -56569,15 +56678,15 @@ var _Button = __webpack_require__(45);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Clock = __webpack_require__(397);
+var _Clock = __webpack_require__(398);
 
 var _Clock2 = _interopRequireDefault(_Clock);
 
-var _Calendar = __webpack_require__(398);
+var _Calendar = __webpack_require__(399);
 
 var _Calendar2 = _interopRequireDefault(_Calendar);
 
-var _DateTimeDrop = __webpack_require__(399);
+var _DateTimeDrop = __webpack_require__(400);
 
 var _DateTimeDrop2 = _interopRequireDefault(_DateTimeDrop);
 
@@ -56949,7 +57058,7 @@ DateTime.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -56977,7 +57086,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -57232,10 +57341,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 396;
+webpackContext.id = 397;
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57351,7 +57460,7 @@ Icon.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57467,7 +57576,7 @@ Icon.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57503,7 +57612,7 @@ var _Header = __webpack_require__(123);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Title = __webpack_require__(400);
+var _Title = __webpack_require__(401);
 
 var _Title2 = _interopRequireDefault(_Title);
 
@@ -57511,19 +57620,19 @@ var _Button = __webpack_require__(45);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _LinkPrevious = __webpack_require__(401);
+var _LinkPrevious = __webpack_require__(402);
 
 var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
 
-var _LinkNext = __webpack_require__(402);
+var _LinkNext = __webpack_require__(403);
 
 var _LinkNext2 = _interopRequireDefault(_LinkNext);
 
-var _Add = __webpack_require__(403);
+var _Add = __webpack_require__(404);
 
 var _Add2 = _interopRequireDefault(_Add);
 
-var _Subtract = __webpack_require__(404);
+var _Subtract = __webpack_require__(405);
 
 var _Subtract2 = _interopRequireDefault(_Subtract);
 
@@ -58115,7 +58224,7 @@ DateTimeDrop.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58251,7 +58360,7 @@ Title.defaultProps = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58367,7 +58476,7 @@ Icon.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58483,7 +58592,7 @@ Icon.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58599,7 +58708,7 @@ Icon.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58715,7 +58824,7 @@ Icon.propTypes = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58809,135 +58918,6 @@ RadioButton.propTypes = {
   name: _propTypes2.default.string,
   onChange: _propTypes2.default.func,
   value: _propTypes2.default.string
-};
-module.exports = exports['default'];
-
-/***/ }),
-/* 406 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(5);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _classnames2 = __webpack_require__(8);
-
-var _classnames3 = _interopRequireDefault(_classnames2);
-
-var _CSSClassnames = __webpack_require__(6);
-
-var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX;
-
-var CheckBox = function (_Component) {
-  _inherits(CheckBox, _Component);
-
-  function CheckBox() {
-    _classCallCheck(this, CheckBox);
-
-    return _possibleConstructorReturn(this, (CheckBox.__proto__ || Object.getPrototypeOf(CheckBox)).apply(this, arguments));
-  }
-
-  _createClass(CheckBox, [{
-    key: 'render',
-    value: function render() {
-      var _classnames;
-
-      var _props = this.props,
-          checked = _props.checked,
-          className = _props.className,
-          disabled = _props.disabled,
-          label = _props.label,
-          name = _props.name,
-          onChange = _props.onChange,
-          reverse = _props.reverse,
-          toggle = _props.toggle,
-          props = _objectWithoutProperties(_props, ['checked', 'className', 'disabled', 'label', 'name', 'onChange', 'reverse', 'toggle']);
-
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--toggle', toggle), _defineProperty(_classnames, CLASS_ROOT + '--disabled', disabled), _defineProperty(_classnames, CLASS_ROOT + '--reverse', reverse), _classnames), className);
-
-      var hidden = void 0;
-      if (disabled && checked) {
-        hidden = _react2.default.createElement('input', { name: name, type: 'hidden', value: 'true' });
-      }
-
-      var children = [_react2.default.createElement(
-        'span',
-        { key: 'checkbox' },
-        _react2.default.createElement('input', _extends({}, props, { tabIndex: '0', className: CLASS_ROOT + '__input',
-          name: name, type: 'checkbox',
-          disabled: disabled,
-          checked: checked,
-          onChange: onChange })),
-        _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__control' },
-          _react2.default.createElement(
-            'svg',
-            { className: CLASS_ROOT + '__control-check', viewBox: '0 0 24 24',
-              preserveAspectRatio: 'xMidYMid meet' },
-            _react2.default.createElement('path', { fill: 'none', d: 'M6,11.3 L10.3,16 L18,6.2' })
-          )
-        )
-      ), _react2.default.createElement(
-        'span',
-        { key: 'label', className: CLASS_ROOT + '__label' },
-        label
-      )];
-
-      return _react2.default.createElement(
-        'label',
-        { className: classes, htmlFor: props.id },
-        reverse ? children.reverse() : children,
-        hidden
-      );
-    }
-  }]);
-
-  return CheckBox;
-}(_react.Component);
-
-CheckBox.displayName = 'CheckBox';
-exports.default = CheckBox;
-
-
-CheckBox.propTypes = {
-  checked: _propTypes2.default.bool,
-  disabled: _propTypes2.default.bool,
-  id: _propTypes2.default.string,
-  label: _propTypes2.default.node,
-  name: _propTypes2.default.string,
-  onChange: _propTypes2.default.func,
-  reverse: _propTypes2.default.bool,
-  toggle: _propTypes2.default.bool
 };
 module.exports = exports['default'];
 
