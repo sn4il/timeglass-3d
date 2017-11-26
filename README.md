@@ -1,6 +1,4 @@
-# Timeglass 3D
-
-![timeglass-3d-logo](https://user-images.githubusercontent.com/9012519/33182084-321e39be-d07b-11e7-99c1-64f52c90399b.png)
+![timeglass-3d-logo-full](https://user-images.githubusercontent.com/9012519/33229008-e7527260-d1ce-11e7-88da-667cbb1cd76b.png)
 
 A fancy 3D timer for your website. See it in action
 [here](https://codepen.io/sn4il/full/OOZNEv/),
@@ -70,10 +68,10 @@ The example below should give you a basic idea on how to use the plugin. Let's t
 
 ```js
 timeglass3D({
-  container: document.getElementById("timeglass3DContainer"),
+  container: document.getElementById('timeglass3DContainer'),
 
-  date: "2018.10.31", // A date to count from (or to count to).
-  mode: "countdown",  // Using the plugin as a countdown. By default it's used as a timer.
+  date: '10/31/2018', // A date to count from (or to count to).
+  mode: 'countdown',  // Using the plugin as a countdown. By default it's used as a timer.
 
   theme: 'dark', // Use dark theme. By default light theme is used.
 
