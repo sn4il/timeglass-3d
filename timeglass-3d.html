@@ -33,7 +33,13 @@
         return Object.assign({}, props, aux);
       }, {});
 
-      props.date = props.date || Date.now();
+      const now = new Date();
+
+      const d = `0${now.getDate()}`.slice(-2);
+      const m = `0${now.getMonth() + 1}`.slice(-2);
+      const y = now.getYear() + 1900;
+
+      props.date = props.date || `${m}/${d}/${y}`;
       props.mode = props.mode || 'timer';
 
       props.theme = props.theme || 'lite';
@@ -45,14 +51,13 @@
         hourglasses: {
           all: {
             sides: {
-              material: 'matte'
+              material: 'matte',
+              color: '#222222'
             }
           }
         },
 
         scale: 0.9,
-        spacing: 3,
-        offsetX: 0,
         offsetY: 2
       }));
     </script>

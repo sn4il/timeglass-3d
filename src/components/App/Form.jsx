@@ -48,7 +48,7 @@ export default (props) =>
       </FormField>
     </FormFields>
 
-    <FormFields style={{marginBottom: '0.5em'}}>
+    <FormFields>
       <FormField>
         <CheckBox
             label='"On Table" mode'
